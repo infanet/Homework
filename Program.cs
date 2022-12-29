@@ -6,6 +6,10 @@ InputSymbolsArray(quantitySymbols);
 
 InputArray(quantitySymbols);
 
+string[] lengthLessThanThree = LengthLessThanThree(quantitySymbols);
+
+InputArray(lengthLessThanThree);
+
 string[] InputSymbolsArray(string[] arr)
 {
     int index = 1;
@@ -26,4 +30,27 @@ void InputArray(string[] inputArray)
         else Console.Write($"\"{inputArray[i]}\"");
     }
     Console.WriteLine("]");
+}
+
+string[] LengthLessThanThree(string[] arr)
+{
+    int count1 = 0;
+    for (int i = 0; i < arr.Length; i++)
+    {
+        if (arr[i].Length < 4)
+        {
+            count1++;
+        }
+    }
+    string[] lengthLessThanThree = new string[count1];
+    int count2 = 0;
+    for (int j = 0; j < arr.Length; j++)
+    {
+        if (arr[j].Length < 4)
+        {
+            lengthLessThanThree[count2] = arr[j];
+            count2++;
+        }
+    }
+    return lengthLessThanThree;
 }
